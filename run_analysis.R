@@ -1,6 +1,6 @@
 # Please download the data from link below, and extract it to any directory.
 # https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-# Please set working directory to the extratced data folder (i.e. "C:/UCI HAR Dataset/")
+# Set working directory to the extratced data folder (i.e. "C:/UCI HAR Dataset/")
 # This R script does the following:
 
 
@@ -14,9 +14,9 @@ df_step1 <- rbind(train,test)
 
 
 # 2. Working on "df_step1", name each variable based on "features.txt".
-#    Then, extract variables which are the mean and standard deviation
+#    Then, extract variables that are the mean and standard deviation
 #    for each measurement, by searching and matching variable names that
-#    contain keywords "mean()" or "std()". Name the extracted data set
+#    contain keywords "mean()" or "std()". Name the transformed data set
 #    as "df_step2".
 
 measurement_label <- read.table("features.txt")
@@ -27,9 +27,9 @@ df_step2 <- cbind(means,stds)
 
 
 # 3. Use cbind() to bring the corresponding acitivity ID and subject ID to the 
-#    observations from the extracted data set ("df_step2"). Where "test" IDs are 
+#    observations from the transformed data set ("df_step2"). Where "test" IDs are 
 #    concatenated below "training" IDs to match the data structure in "df_step1".
-#    Name the new data set with corresponding IDs as "df_step3".
+#    Name the transformed data set with corresponding IDs as "df_step3".
 
 activity_train <- read.table("train/y_train.txt")
 activity_test <- read.table("test/y_test.txt")
@@ -44,22 +44,21 @@ names(subject_complete) <- "Subject"
 df_step3 <- cbind(activity_complete,subject_complete,df_step2)
 
 
-# 4. Use merge() and subset to replace activity IDs with activity labels to get
-#    the tidy data set. Name the tidy data set as "tidy_data", and save it as
-#    "tidy_data.txt".
+# 4. Use merge() and subset to replace activity IDs from transformed data 
+#    ("df_step3") with activity labels. Name the new transformed data set
+#    as "df_step4".
 
 activity_label <- read.table("activity_labels.txt")
 names(activity_label) <- c("Activity_ID","Activity")
 
-tidy_data <- merge(activity_label,df_step3,all=TRUE)
-tidy_data <- tidy_data[,c(2:69)]
+df_step4 <- merge(activity_label,df_step3,all=TRUE)
+df_step4 <- df_step4[,c(2:69)]
+
+
+# 5. Use "df_step4" from step 4 to create a tidy data set with the average 
+#    of each variable for each activity and each subject. Name the tidy 
+#    data set as "tidy_data", and save it as "tidy_data.txt"
+
+tidy_data <- aggregate(df_step4[,3:68],by=list(df_step4$Activity,df_step4$Subject),mean)
+colnames(tidy_data)[c(1,2)] <- c("Activity","Subject")
 write.table(tidy_data,"tidy_data.txt",sep=",",row.names=FALSE)
-
-
-# 5. Use the "tidy_data" from step 4 to create a second, independent tidy 
-#    data set with the average of each variable for each activity and each subject.
-#    Name the second tidy data set as "tidy_data_2", and save it as "tidy_data_2.txt"
-
-tidy_data_2 <- aggregate(tidy_data[,3:68],by=list(tidy_data$Activity,tidy_data$Subject),mean)
-colnames(tidy_data_2)[c(1,2)] <- c("Activity","Subject")
-write.table(tidy_data_2,"tidy_data_2.txt",sep=",",row.names=FALSE)

@@ -1,4 +1,4 @@
-Code book for run_analysis.R
+Code Book
 ===========
 
 ### Variables Explanation
@@ -50,4 +50,4 @@ The transformation of data takes the following steps:
 
 * Replace activity IDs from the transformed data with activity labels, the transformed data's dimension remains as 68 columns by 10299 rows.
 
-* The tidy data is created by taking the average of each variable for each activity and each subject from the transformed data in the previous step. The tidy data is called `tidy_data_2.txt`. It has a dimension of 68 columns by 180 rows, where each row represents the average of each variable for each activity and each subject.
+* The tidy data is created by taking the average of each variable for each activity and each subject from the transformed data in the previous step. The tidy data is called `tidy_data.txt`. It has a dimension of 68 columns by 180 rows, where each row represents the average of each variable for each activity and each subject.
