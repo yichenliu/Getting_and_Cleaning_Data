@@ -9,7 +9,7 @@ There are 68 variables in the tidy data. 66 of them are measurements, and the ot
 
 * Subject: It has 30 values ranging from 1 to 30, which represents the identifier of the subject who carried out the experiment.
 
-* ('t' or 'f')'BodyAcc'-('mean()' or 'std()')-('X' or 'Y' or 'Z'): The time (t) or frequency (f) domain body acceleration signal measured in mean (mean()) or standard deviation (std()) in X, Y or Z directions. The oberservations have been further averaged against each activity and each subject.
+* (`t` or `f`)`BodyAcc`-(`mean()` or `std()`)-(`X` or `Y` or `Z`): The time (t) or frequency (f) domain body acceleration signal measured in mean (mean()) or standard deviation (std()) in X, Y or Z directions. The oberservations have been further averaged against each activity and each subject.
 
 * (t or f)BodyAccJerk-(mean() or std())-(X or Y or Z): The time (t) or frequency (f) domain body linear acceleration signal measured in mean (mean()) or standard deviation (std()) in X, Y or Z directions. The oberservations have been further averaged against each activity and each subject.
 
