@@ -6,7 +6,7 @@ Description of run_analysis.R
 Please download the data from link below, and extract it to any directory.
 [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
-Set working directory to the extratced data folder (i.e. "C:/UCI HAR Dataset/") and execute every line in `run_analysis.R`. The tidy data will be created in your working directory, and named: `tidy_data.txt`.
+Set working directory to the extratced data folder (i.e. `C:/UCI HAR Dataset/`) and execute every line in `run_analysis.R`. The tidy data will be created in your working directory, and named: `tidy_data.txt`.
 
 ###Assumptions
 
