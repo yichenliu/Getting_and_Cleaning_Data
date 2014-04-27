@@ -3,7 +3,7 @@ Code Book
 
 ### Variables Explanation
 
-There are 68 variables in the tidy data. 66 of them are measurements, and the other 2 are the corresponding activity name and subject ID for the measurements. The explations for the variables are as follow:
+There are 68 variables in the tidy data. 66 of them are measurements, and the other 2 are the corresponding activity name and subject ID for the measurements. The explations for the variables are as follow (where ` ` represents elements in the variable names):
 
 * `Activity`: It has 6 values (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING and LAYING), which represents activities carried out by the subject in the experiment, it
 
