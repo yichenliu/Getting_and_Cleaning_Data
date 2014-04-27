@@ -6,9 +6,9 @@ Description of run_analysis.R
 Please download the data from link below, and extract it to any directory.
 [https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
-Set working directory to the extratced data folder (i.e. `C:/UCI HAR Dataset/`) and execute every line in `run_analysis.R`. The tidy data will be created in your working directory, and named: `tidy_data.txt`.
+Set working directory to the extratced data folder (i.e. `C:/UCI HAR Dataset/`) and execute every line in `run_analysis.R`. The comma seperated tidy data will be created in your working directory, and named: `tidy_data.txt`.
 
-###Assumptions
+###Key Attributes
 
 * Training and test measurements are extracted from `./train/X_train.txt` and `./test/X_test.txt`. And measurement names are extracted from `./features.txt`.
 
@@ -32,6 +32,6 @@ The scripts in run_analysis.R is made up of 5 steps:
 
 * Use `cbind()` to bring the corresponding `acitivity ID` and `subject ID` to the observations from the transformed data set (`df_step2`). Where `test` IDs are concatenated below `training` IDs to match the data structure in `df_step1`. Name the transformed data set with corresponding IDs as `df_step3`.
 
-* Use `merge()` and `subset` to replace `activity IDs` from transformed data (`df_step3`) with `activity labels`. Name the new transformed data set as `df_step4`.
+* Use `merge()` and `subset` to replace `activity ID` from transformed data (`df_step3`) with `activity label`. Name the new transformed data set as `df_step4`.
 
-* Use `df_step4` from step 4 to create a tidy data set with the average of each variable for each activity and each subject. Name the tidy data set as `tidy_data`, and save it as `tidy_data.txt`.
+* Use `df_step4` from step 4 to create a tidy data set with the average of each measurement for each activity and each subject. Name the tidy data set as `tidy_data`, and save it as a comma seperated text file: `tidy_data.txt`.
