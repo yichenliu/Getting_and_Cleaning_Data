@@ -9,7 +9,7 @@ There are 68 variables in the tidy data. 66 of them are measurements, and the ot
 
 * Subject: It has 30 values ranging from 1 to 30, which represents the identifier of the subject who carried out the experiment.
 
-* (t or f)BodyAcc-(mean() or std())-(X or Y or Z): The time (t) or frequency (f) domain body acceleration signal measured in mean (mean()) or standard deviation (std()) in X, Y or Z directions. The oberservations have been further averaged against each activity and each subject.
+* ('t' or 'f')'BodyAcc'-('mean()' or 'std()')-('X' or 'Y' or 'Z'): The time (t) or frequency (f) domain body acceleration signal measured in mean (mean()) or standard deviation (std()) in X, Y or Z directions. The oberservations have been further averaged against each activity and each subject.
 
 * (t or f)BodyAccJerk-(mean() or std())-(X or Y or Z): The time (t) or frequency (f) domain body linear acceleration signal measured in mean (mean()) or standard deviation (std()) in X, Y or Z directions. The oberservations have been further averaged against each activity and each subject.
 
@@ -49,4 +49,4 @@ The transformation of data takes the following steps:
 
 * Replace activity IDs from the transformed data with activity labels, the transformed data's dimension remains as 68 columns by 10299 rows.
 
-* The tidy data is created by taking the average of each variable for each activity and each subject from the transformed data in the previous step. The tidy data is called "tidy_data_2.txt". It has a dimension of 68 columns by 180 rows, where each row represents the average of each variable for each activity and each subject.
+* The tidy data is created by taking the average of each variable for each activity and each subject from the transformed data in the previous step. The tidy data is called 'tidy_data_2.txt'. It has a dimension of 68 columns by 180 rows, where each row represents the average of each variable for each activity and each subject.
