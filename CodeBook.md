@@ -37,7 +37,8 @@ There are 68 variables in the tidy data. 66 of them are measurements, and the ot
 
 ### Data Transformation
 
-The data set for this analysis is obtained from: `https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip` It consists of several text files.
+The data set for this analysis is obtained from: 
+[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
 The transformation of data takes the following steps:
 
