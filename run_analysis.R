@@ -56,8 +56,9 @@ df_step4 <- df_step4[,c(2:69)]
 
 
 # 5. Use "df_step4" from step 4 to create a tidy data set with the average 
-#    of each variable for each activity and each subject. Name the tidy 
-#    data set as "tidy_data", and save it as "tidy_data.txt"
+#    of each measurement for each activity and each subject. Name the tidy 
+#    data set as "tidy_data", and save it as a comma seperated text file:
+#    "tidy_data.txt"
 
 tidy_data <- aggregate(df_step4[,3:68],by=list(df_step4$Activity,df_step4$Subject),mean)
 colnames(tidy_data)[c(1,2)] <- c("Activity","Subject")
